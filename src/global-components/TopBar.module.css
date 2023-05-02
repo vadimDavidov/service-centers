@@ -1,0 +1,90 @@
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 4px;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  text-align: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #346eb8;
+  margin-right: 48px;
+  white-space: nowrap;
+}
+
+.brand span {
+  white-space: nowrap;
+
+}
+
+.brand a {
+  color: #346eb8;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  display: contents;
+}
+
+.logo {
+  margin-right: 0.5rem;
+  padding: 0.5r 0;
+}
+
+.topbar button {
+  background-color: transparent;
+  border: none;
+  color: #323232;
+  font-weight: 700;
+  white-space: nowrap;
+  margin-left: 6rem;
+  margin-right: 1.5rem;
+  font-size: 1rem;
+  display: inline-block;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0.375rem 0.75rem;
+  user-select: none;
+}
+
+.topbar span {
+  border-bottom: 1px dotted #000;
+  align-items: center;
+
+}
+
+.loginLink {
+  background-color: transparent;
+  border: none;
+  opacity: 0.4;
+}
+
+@media (max-width: 600px) {
+
+
+  .brand {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  .topbar {
+    min-width: none;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .logo {
+    width: 36px;
+    height: 43px
+  }
+
+  .brand span {
+    font-size: 1rem;
+  }
+}

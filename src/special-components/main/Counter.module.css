@@ -1,0 +1,75 @@
+.wrapper {
+  background-color: #7dd3dc;
+  background-image: url('/images/stats-bg.png');
+  background-size: cover;
+  display: flex;
+  justify-content: flex-start;
+  width: 100vw;
+}
+
+.counter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+  padding: 48px;
+}
+
+.left {
+  font-size: 2.4rem;
+  height: 100%;
+  padding-left: 48px;
+  padding-right: 16px;
+  width: 58%;
+  max-width: 100%;
+}
+
+
+.amount {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.border {
+  width: 2px;
+  height: 150px;
+  background-color: #BBE3ED;
+}
+
+.right {
+  padding-left: 48px;
+  width: 42%;
+  max-width: 100%;
+  font-size: 1.4rem;
+}
+
+@media (max-width:768px) {
+  .counter {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .left {
+    font-size: 2rem;
+    width: 100%;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .border {
+    display: none;
+  }
+}
+
+
+@media (max-width:520px) {
+  .left {
+    font-size: 1.3rem;
+  }
+
+  .right {
+    font-size: 1.1rem;
+  }
+}

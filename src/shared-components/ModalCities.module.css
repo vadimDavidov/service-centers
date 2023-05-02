@@ -1,0 +1,164 @@
+.modal {
+  transition: transform .3s ease-out;
+  max-width: 800px;
+  width: 800px;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: .4rem;
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 10%;
+  left: 24%;
+  z-index: 1;
+  padding: 8px;
+}
+
+.modalHeader {
+  align-items: center;
+  border-bottom: 1px solid #dee2e6;
+  border-radius: 4px;
+  width: 96%;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  padding: 16px;
+}
+
+.modalHeader button {
+  background-color: transparent;
+  border: none;
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 100%;
+
+}
+
+.modalBody li {
+  margin-bottom: 8px;
+}
+
+.modalBody hr {
+  width: 95%;
+  opacity: 0.4;
+  margin-bottom: 20px;
+}
+
+.bodyBlocks {
+  display: flex;
+}
+
+.leftBlock {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.leftBlock li:nth-child(-n + 2) {
+  font-weight: 700;
+}
+
+.middleBlock {
+  width: 30%;
+}
+
+.rightBlock {
+  width: 30%;
+}
+
+.modal_close-btn {
+  border: none;
+  background-color: transparent;
+  padding: 8px;
+  opacity: 0.5;
+}
+
+.selector {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  margin: 0 8px 8px;
+  width: 97%;
+  border: 1px solid #dee2e6;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.selector span {
+  opacity: 0.6;
+}
+
+.selectorOptions {
+  padding-left: 0;
+  margin: 0;
+  border: 1px solid #dee2e6;
+  background-color: #fff;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 200px;
+  min-height: 200px;
+  width: 98%;
+}
+
+.selectorOptions li {
+  padding: 8px 16px;
+  width: 100%;
+  background-color: #fff;
+  text-align: left;
+}
+
+.selectorOptions a {
+  opacity: 0.6;
+  color: #212121;
+  cursor: pointer;
+  user-select: none;
+  height: 36px;
+  border: none;
+  width: 100%;
+}
+
+.selectorOptions a:hover {
+  color: #fff;
+}
+
+.selectorOptions input {
+  width: 730px;
+  padding: 6px 8px;
+  color: #666;
+  border: 1px solid #B0B0B0;
+  border-radius: 8px;
+  position: fixed;
+  display: flex;
+  background-color: #fff;
+  margin-top: 8px;
+  margin-left: 8px;
+  z-index: 1;
+  font-size: inherit;
+}
+
+.selectorOptions input::placeholder {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.selectorOptions input:focus {
+  border: 2px solid #B8D3FD;
+}
+
+.selectorOptions li:hover {
+  background-color: #0161f0;
+  text-decoration: none;
+  color: #fff;
+}
+
+.selectorOptions a:hover {
+  color: #fff;
+  opacity: 1;
+}

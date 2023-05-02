@@ -1,0 +1,134 @@
+.search {
+  text-align: center;
+  margin-bottom: 48px;
+  width: 100%;
+}
+
+.search h1 {
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  padding-bottom: 16px;
+  padding-top: 24px;
+}
+
+.form {
+  background-color: #fff;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 65%;
+  padding: 8px;
+  margin: 0 auto;
+}
+
+.form input {
+  padding: 8px 16px;
+  border: none;
+  color: #323232;
+  font-size: 1.25rem;
+  border: none;
+}
+
+.searchBtn {
+  margin-left: 0.25rem;
+  border: 1px solid transparent;
+  border-radius: 0.3rem;
+  font-size: 1.25rem;
+  padding: 12px 20px;
+  background-color: #346eb8;
+  border-color: #346eb8;
+  color: #fff;
+  box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, .15),
+    0 1px 1px rgba(0, 0, 0, .075);
+}
+
+.inputGroup {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.inputGroup input {
+  width: 100%;
+}
+
+.text {
+  padding-left: 8px;
+  cursor: pointer;
+}
+
+.inputGroup input::placeholder {
+  opacity: 0.8;
+  font-size: 1.25rem;
+}
+
+.inputGroup span {
+  display: flex;
+  align-items: center;
+}
+
+.dataResult {
+  width: 860px;
+  height: 250px;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .075);
+  border-top: 1px solid #4f93eb;
+  overflow: hidden;
+  overflow-y: auto;
+  margin: 0 auto;
+  padding-left: 0;
+  border-radius: 8px;
+}
+
+.dataResult::-webkit-scrollbar {
+  display: none;
+}
+
+.dataItem {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dataItem span {
+  width: 100%;
+}
+
+.dataItem span a {
+  color: #323232;
+}
+
+.dataItem span a:hover {
+  color: #fff;
+}
+
+.dataItem:hover {
+  background-color: #4f93eb;
+  opacity: 0.5;
+}
+
+.clearBtn {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .form button {
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 550px) {
+  .searchBtn {
+    display: none;
+  }
+
+  .input-group input::placeholder {
+    opacity: 0;
+  }
+}
