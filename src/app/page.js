@@ -1,5 +1,7 @@
+import Message from '@/global-components/Message';
+
 function Page(props) {
-  return;
+  return <Message />;
 }
 
 export default Page;

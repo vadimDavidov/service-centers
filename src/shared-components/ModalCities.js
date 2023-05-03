@@ -1,14 +1,19 @@
 'use client';
-
 import styles from './ModalCities.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import { modalData } from '@/data/modalData';
+import { v4 as uuidv4 } from 'uuid';
 import { modalLinks } from '@/data/modalData';
 import { useState } from 'react';
 
 function ModalCities(props) {
   const [showList, setShowList] = useState(false);
+
+  // * Passing event result from child to parent component
+  const handlePicking = (event, handleClick) => {
+    handleClick = props.handleClick;
+    handleClick(event);
+  };
 
   const toggleShowList = () => {
     if (!showList) {
@@ -19,10 +24,16 @@ function ModalCities(props) {
   };
 
   const getData = index => {
-    return modalData[index].map(data => {
+    return props.data[index].map((city, i) => {
       return (
-        <li>
-          <Link href="#">{data}</Link>
+        <li
+          onClick={() => {
+            props.onCloseModal();
+            handlePicking(city);
+          }}
+          key={uuidv4()}
+        >
+          <Link href={props.href[index][i]}>{city}</Link>
         </li>
       );
     });

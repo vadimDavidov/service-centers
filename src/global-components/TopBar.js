@@ -5,9 +5,23 @@ import Link from 'next/link';
 import { useState } from 'react';
 import ModalCities from '@/shared-components/ModalCities';
 import Overlay from '@/special-components/main/Overlay';
+import { modalData } from '@/data/modalData';
 
 function TopBar() {
+  const cities = modalData.map(city => city.map(item => item.props.children));
+  const paths = modalData.map(link => link.map(path => path.props.href));
   const [isOpen, setIsOpen] = useState(false);
+  const [pickedcity, setPickedCity] = useState(cities[0][0]);
+
+  // * Accept and handle data from child component
+  const handleClick = data => {
+    setPickedCity(data);
+    console.log(`Data from Child accepted: ${data}`);
+  };
+
+  const getEvent = acceptedEvent => {
+    console.log(acceptedEvent);
+  };
 
   const toggleModal = () => {
     !isOpen ? setIsOpen(true) : setIsOpen(false);
@@ -32,7 +46,7 @@ function TopBar() {
             Сервисные центры
           </Link>
           <button onClick={toggleModal} type="button">
-            <span>Краснодар</span>
+            <span>{pickedcity}</span>
           </button>
         </div>
         <Link href="#" className={styles.loginLink} type="button">
@@ -47,7 +61,13 @@ function TopBar() {
       {isOpen && (
         <>
           <Overlay onCloseModal={closeModal} />
-          <ModalCities onCloseModal={closeModal} />
+          <ModalCities
+            onCloseModal={closeModal}
+            data={cities}
+            getEvent={getEvent}
+            handleClick={handleClick}
+            href={paths}
+          />
         </>
       )}
     </div>
