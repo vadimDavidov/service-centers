@@ -1,9 +1,10 @@
+import '../../app/globals.css';
 import styles from './Manufacturers.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import LinkToPage from './LinkToPage';
 
-function Manufacturers({ data }) {
+function Manufacturers({ manufacturersData }) {
   return (
     <section className={styles.wrapper}>
       <div className={styles.title}>
@@ -13,7 +14,7 @@ function Manufacturers({ data }) {
         <ul className={styles.manufacturers}>
           {
             // * Getting data
-            data.map(item => {
+            manufacturersData.map(item => {
               return (
                 <li>
                   <Link href="#">

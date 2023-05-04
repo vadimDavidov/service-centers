@@ -1,33 +1,33 @@
 import Link from 'next/link';
 
-export const modalData = [
+export const mainCities = [
   [
-    <Link href="/moscow">Москва</Link>,
-    <Link href="/petersburg">Санкт‑Петербург </Link>,
-    <Link href="/volgograd">Волгоград </Link>,
-    <Link href="/voronezh">Воронеж </Link>,
-    <Link href="/ecaterinburg">Екатеринбург </Link>,
-    <Link href="/irkutsk">Иркутск </Link>,
+    <Link href="/cities/moscow">Москва </Link>,
+    <Link href="/cities/petersburg">Санкт‑Петербург </Link>,
+    <Link href="/cities/volgograd">Волгоград </Link>,
+    <Link href="/cities/voronezh">Воронеж </Link>,
+    <Link href="/cities/ekaterinburg">Екатеринбург </Link>,
+    <Link href="/cities/irkutsk">Иркутск </Link>,
   ],
   [
-    <Link href="/kazan">Казань </Link>,
-    <Link href="/krasnodar">Краснодар</Link>,
-    <Link href="/krasnoyarsk">Красноярск </Link>,
-    <Link href="/novgorod">Нижний Новгород </Link>,
-    <Link href="/novosibirsk">Новосибирск </Link>,
-    <Link href="/omsk">Омск</Link>,
+    <Link href="/cities/kazan">Казань </Link>,
+    <Link href="/cities/krasnodar">Краснодар </Link>,
+    <Link href="/cities/krasnoyarsk">Красноярск </Link>,
+    <Link href="/cities/novgorod">Нижний Новгород </Link>,
+    <Link href="/cities/novosibirsk">Новосибирск </Link>,
+    <Link href="/cities/omsk">Омск </Link>,
   ],
   [
-    <Link href="/perm">Пермь </Link>,
-    <Link href="/rostov">Ростов‑на‑Дону </Link>,
-    <Link href="/samara">Самара </Link>,
-    <Link href="/sochi">Сочи </Link>,
-    <Link href="/ufa">Уфа </Link>,
-    <Link href="/chelyabinsk">Челябинск </Link>,
+    <Link href="/cities/perm">Пермь </Link>,
+    <Link href="/cities/rostov">Ростов‑на‑Дону </Link>,
+    <Link href="/cities/samara">Самара </Link>,
+    <Link href="/cities/sochi">Сочи </Link>,
+    <Link href="/cities/ufa">Уфа </Link>,
+    <Link href="/cities/chelyabinsk">Челябинск </Link>,
   ],
 ];
 
-export const modalLinks = [
+export const optionCities = [
   <Link target={'_blank'} href="https://abakan.service-centers.ru/">
     Абакан
   </Link>,

@@ -1,26 +1,23 @@
 'use client';
+import '../app/globals.css';
 import styles from './TopBar.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import ModalCities from '@/shared-components/ModalCities';
 import Overlay from '@/special-components/main/Overlay';
-import { modalData } from '@/data/modalData';
+import TopbarDropdown from './TopbarDropdown';
 
-function TopBar() {
-  const cities = modalData.map(city => city.map(item => item.props.children));
-  const paths = modalData.map(link => link.map(path => path.props.href));
+function TopBar({ mainCities }) {
+  const cities = mainCities.map(city => city.map(item => item.props.children));
+  const paths = mainCities.map(link => link.map(path => path.props.href));
   const [isOpen, setIsOpen] = useState(false);
-  const [pickedcity, setPickedCity] = useState(cities[0][0]);
+  const [pickedCity, setPickedCity] = useState('Выбор города');
+  const [isDropdown, setIsDropdown] = useState(false);
 
-  // * Accept and handle data from child component
-  const handleClick = data => {
-    setPickedCity(data);
-    console.log(`Data from Child accepted: ${data}`);
-  };
-
-  const getEvent = acceptedEvent => {
-    console.log(acceptedEvent);
+  // * Accept and set data from child component - ModalCities
+  const handleClick = eventValue => {
+    setPickedCity(eventValue);
   };
 
   const toggleModal = () => {
@@ -29,6 +26,10 @@ function TopBar() {
 
   const closeModal = () => {
     setIsOpen(false);
+  };
+
+  const toggleDropdown = () => {
+    !isDropdown ? setIsDropdown(true) : setIsDropdown(false);
   };
 
   return (
@@ -46,25 +47,26 @@ function TopBar() {
             Сервисные центры
           </Link>
           <button onClick={toggleModal} type="button">
-            <span>{pickedcity}</span>
+            <span>{pickedCity}</span>
           </button>
         </div>
-        <Link href="#" className={styles.loginLink} type="button">
+        <button href="#" className={styles.loginLink} type="button">
           <Image
             width={25}
             height={25}
             src="/icons/login.svg"
             alt="arrow-img"
+            onClick={toggleDropdown}
           />
-        </Link>
+        </button>
+        {isDropdown && <TopbarDropdown />}
       </div>
       {isOpen && (
         <>
           <Overlay onCloseModal={closeModal} />
           <ModalCities
             onCloseModal={closeModal}
-            data={cities}
-            getEvent={getEvent}
+            cities={cities}
             handleClick={handleClick}
             href={paths}
           />

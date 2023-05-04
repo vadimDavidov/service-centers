@@ -1,3 +1,4 @@
+import '../../app/globals.css';
 import styles from './Suggestions.module.css';
 import LinkToPage from './LinkToPage';
 

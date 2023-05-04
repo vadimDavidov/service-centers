@@ -1,3 +1,4 @@
+import '../app/globals.css';
 import styles from './Footer.module.css';
 import Image from 'next/image';
 import Link from 'next/link';

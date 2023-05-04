@@ -2,6 +2,8 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import TopBar from '@/global-components/TopBar';
 import Footer from '@/global-components/Footer';
+import { mainCities } from '@/data/modalData';
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -13,8 +15,14 @@ export const metadata = {
 function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Poppins:ital,wght@0,400;0,500;1,600&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <body className={inter.className} suppressHydrationWarning={true}>
-        <TopBar />
+        <TopBar mainCities={mainCities} />
         {children}
         <Footer />
       </body>

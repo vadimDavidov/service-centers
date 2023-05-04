@@ -5,22 +5,29 @@ import Manufacturers from '@/special-components/main/Manufacturers';
 import Counter from '@/special-components/main/Counter';
 import PopularServices from '@/special-components/main/PopularServices';
 import Suggestions from '@/special-components/main/Suggestions';
-import { modalLinks } from '@/data/modalData';
+import { mainCities } from '@/data/modalData';
+import { optionCities } from '@/data/modalData';
 import { categoriesData } from '@/data/categoriesData';
 import { manufacturersData } from '@/data/manufacturersData';
 import { popularServicesData } from '@/data/popularServicesData';
 
-export default function Moscow() {
+export default function Krasnodar() {
   return (
     <>
       <Head>
         <title>Поиск сервисных центров для ремонта и обслуживания</title>
       </Head>
-      <SearchBar placeholder="Что сломалось?" data={modalLinks} />
-      <Categories data={categoriesData} />
-      <Manufacturers data={manufacturersData} />
+
+      <SearchBar
+        placeholder="Что сломалось?"
+        optionCities={optionCities}
+        mainCities={mainCities}
+        place="Краснодаре"
+      />
+      <Categories categoriesData={categoriesData} />
+      <Manufacturers manufacturersData={manufacturersData} />
       <Counter />
-      <PopularServices data={popularServicesData} />
+      <PopularServices popularServicesData={popularServicesData} />
       <Suggestions />
     </>
   );

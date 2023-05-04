@@ -1,3 +1,4 @@
+import '../../app/globals.css';
 import styles from './LinkToPage.module.css';
 import Link from 'next/link';
 import Image from 'next/image';

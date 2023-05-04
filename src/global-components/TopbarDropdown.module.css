@@ -1,0 +1,26 @@
+.dropdown {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  transform: translate(0px, 40px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15);
+  border-radius: 0.25rem;
+  min-width: 160px;
+  right: 85px;
+  top: 16px;
+  padding: 8px 0;
+  border: 0;
+}
+
+.dropdown a {
+  color: #212529;
+  padding: 4px 16px;
+  white-space: nowrap;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.dropdown a:hover {
+  background-color: #EBEEF1;
+}

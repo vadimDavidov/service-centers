@@ -1,16 +1,17 @@
+import '../../app/globals.css';
 import styles from './Categories.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import LinkToPage from './LinkToPage';
 
-function Categories({ data }) {
+function Categories({ categoriesData }) {
   return (
     <div className="container">
       <ul className={styles.categories}>
         {
           //* Getting data
-          data &&
-            data.map(item => {
+          categoriesData &&
+            categoriesData.map(item => {
               return (
                 <li className={styles.category}>
                   <div className={styles.image}>

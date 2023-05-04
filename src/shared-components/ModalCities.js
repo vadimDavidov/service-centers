@@ -3,16 +3,16 @@ import styles from './ModalCities.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { v4 as uuidv4 } from 'uuid';
-import { modalLinks } from '@/data/modalData';
+import { optionCities } from '@/data/modalData';
 import { useState } from 'react';
+import ErrorMessage from '@/global-components/ErrorMessage';
 
 function ModalCities(props) {
   const [showList, setShowList] = useState(false);
 
-  // * Passing event result from child to parent component
-  const handlePicking = (event, handleClick) => {
-    handleClick = props.handleClick;
-    handleClick(event);
+  // * Passing event result from child to parent component - TopBar
+  const handlePicking = event => {
+    props.handleClick(event);
   };
 
   const toggleShowList = () => {
@@ -24,7 +24,7 @@ function ModalCities(props) {
   };
 
   const getData = index => {
-    return props.data[index].map((city, i) => {
+    return props.cities[index].map((city, i) => {
       return (
         <li
           onClick={() => {
@@ -33,7 +33,9 @@ function ModalCities(props) {
           }}
           key={uuidv4()}
         >
-          <Link href={props.href[index][i]}>{city}</Link>
+          <Link href={props.href[index][i]} key={uuidv4()}>
+            {city}
+          </Link>
         </li>
       );
     });
@@ -85,8 +87,8 @@ function ModalCities(props) {
                 autoFocus={true}
               />
             </div>
-            {modalLinks.map(option => (
-              <li>{option}</li>
+            {optionCities.map(option => (
+              <li key={uuidv4()}>{option}</li>
             ))}
           </ul>
         </>
