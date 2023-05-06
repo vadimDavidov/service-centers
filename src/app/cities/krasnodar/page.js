@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import SearchBar from '@/special-components/main/SearchBar';
 import Categories from '@/special-components/main/Categories';
 import Manufacturers from '@/special-components/main/Manufacturers';
@@ -14,9 +13,7 @@ import { popularServicesData } from '@/data/popularServicesData';
 export default function Krasnodar() {
   return (
     <>
-      <Head>
-        <title>Поиск сервисных центров для ремонта и обслуживания</title>
-      </Head>
+      <title>Сервисные центры Краснодара</title>
 
       <SearchBar
         placeholder="Что сломалось?"

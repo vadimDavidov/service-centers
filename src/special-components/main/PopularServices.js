@@ -1,4 +1,3 @@
-import '../../app/globals.css';
 import styles from './PopularServices.module.css';
 import LinkToPage from './LinkToPage';
 

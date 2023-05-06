@@ -1,4 +1,3 @@
-import '../app/globals.css';
 import styles from './Message.module.css';
 
 function Message() {

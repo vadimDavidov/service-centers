@@ -1,10 +1,9 @@
 'use client';
-import '../app/globals.css';
 import styles from './TopBar.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import ModalCities from '@/shared-components/ModalCities';
+import ModalCities from '@/global-components/ModalCities';
 import Overlay from '@/special-components/main/Overlay';
 import TopbarDropdown from './TopbarDropdown';
 
@@ -59,7 +58,7 @@ function TopBar({ mainCities }) {
             onClick={toggleDropdown}
           />
         </button>
-        {isDropdown && <TopbarDropdown />}
+        {isDropdown && <TopbarDropdown onClose={toggleDropdown} />}
       </div>
       {isOpen && (
         <>

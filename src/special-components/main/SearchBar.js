@@ -1,5 +1,4 @@
 'use client';
-import '../../app/globals.css';
 import styles from './SearchBar.module.css';
 import Image from 'next/image';
 import { useState } from 'react';

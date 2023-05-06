@@ -19,8 +19,10 @@
   white-space: nowrap;
   width: 100%;
   font-size: 1rem;
+  filter: brightness(1);
 }
 
 .dropdown a:hover {
-  background-color: #EBEEF1;
+  background-color: #EAEDF0;
+
 }

@@ -1,4 +1,3 @@
-import '../../app/globals.css';
 import styles from './Categories.module.css';
 import Image from 'next/image';
 import Link from 'next/link';

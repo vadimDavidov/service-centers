@@ -1,4 +1,3 @@
-import '../app/globals.css';
 import styles from './ErrorMessage.module.css';
 import LinkToPage from '@/special-components/main/LinkToPage';
 

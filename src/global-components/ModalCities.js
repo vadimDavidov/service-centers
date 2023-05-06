@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { v4 as uuidv4 } from 'uuid';
 import { optionCities } from '@/data/modalData';
 import { useState } from 'react';
-import ErrorMessage from '@/global-components/ErrorMessage';
 
 function ModalCities(props) {
   const [showList, setShowList] = useState(false);

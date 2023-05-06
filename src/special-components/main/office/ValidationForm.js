@@ -1,4 +1,3 @@
-import '../../../app/globals.css';
 import styles from './ValidationForm.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -27,7 +26,7 @@ function ValidationForm(props) {
         <div className={styles.subform}>
           <Link href="#">Восстановление пароля</Link>
           <span>.</span>
-          <Link href="#">Регистрация</Link>
+          <Link href="/cities/krasnodar/office/register">Регистрация</Link>
         </div>
       </div>
     </div>

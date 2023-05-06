@@ -1,4 +1,3 @@
-import '../../app/globals.css';
 import styles from './Manufacturers.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
