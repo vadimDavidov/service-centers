@@ -15,11 +15,7 @@ function ModalCities(props) {
   };
 
   const toggleShowList = () => {
-    if (!showList) {
-      setShowList(true);
-    } else {
-      setShowList(false);
-    }
+    setShowList(prev => !prev);
   };
 
   const getData = index => {

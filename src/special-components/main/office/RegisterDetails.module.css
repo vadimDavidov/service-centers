@@ -1,3 +1,7 @@
+.wrapper {
+  display: flex;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -95,4 +99,9 @@
 
 .form input::placeholder {
   opacity: 0.5;
+}
+
+.map {
+  padding-left: 12px;
+  margin-top: 24px;
 }

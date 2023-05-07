@@ -16,11 +16,11 @@ function TopBar({ mainCities }) {
 
   // * Accept and set data from child component - ModalCities
   const handleClick = eventValue => {
-    setPickedCity(eventValue);
+    setPickedCity(() => eventValue);
   };
 
   const toggleModal = () => {
-    !isOpen ? setIsOpen(true) : setIsOpen(false);
+    setIsOpen(prev => !prev);
   };
 
   const closeModal = () => {
@@ -28,7 +28,7 @@ function TopBar({ mainCities }) {
   };
 
   const toggleDropdown = () => {
-    !isDropdown ? setIsDropdown(true) : setIsDropdown(false);
+    setIsDropdown(prev => !prev);
   };
 
   return (
@@ -42,8 +42,11 @@ function TopBar({ mainCities }) {
               height={56}
               src="/icons/logo.svg"
               alt="logo-img"
+              onClick={() => setPickedCity('Выбор города')}
             />
-            Сервисные центры
+            <p onClick={() => setPickedCity('Выбор города')}>
+              Сервисные центры
+            </p>
           </Link>
           <button onClick={toggleModal} type="button">
             <span>{pickedCity}</span>
