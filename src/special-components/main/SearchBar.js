@@ -1,20 +1,23 @@
 'use client';
 import styles from './SearchBar.module.css';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Link from 'next/link';
-import { v4 as uuidv4 } from 'uuid';
+import { CitiesDataContext } from '@/app/layout';
+import { CurrentCityContext } from '@/global-components/TopBar';
 
-function SearchBar({ placeholder, optionCities, place }) {
+function SearchBar({ placeholder }) {
+  const citiesData = useContext(CitiesDataContext);
+  const currentCity = useContext(CurrentCityContext);
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState('');
 
   const handleFilter = event => {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
-    const newFilter = optionCities.filter(
+    const newFilter = citiesData.filter(
       value =>
-        value.props.children
+        value.name
           .trim()
           .toLowerCase()
           .startsWith(searchWord.trim().toLowerCase()) // here can be used includes() method if need
@@ -31,8 +34,8 @@ function SearchBar({ placeholder, optionCities, place }) {
   const getData = () =>
     filteredData.slice(0, 15).map(item => {
       return (
-        <li className={styles.dataItem} key={uuidv4()}>
-          <span>{item}</span>
+        <li className={styles.dataItem} key={item.id}>
+          <span>{item.name}</span>
         </li>
       );
     });
@@ -40,7 +43,7 @@ function SearchBar({ placeholder, optionCities, place }) {
   return (
     <div className="container">
       <div className={styles.search}>
-        <h1>Сервисные центры в {place}</h1>
+        <h1>Сервисные центры - {currentCity}</h1>
         <form className={styles.form} action="post">
           <div className={styles.inputGroup}>
             <span className={styles.text}>
@@ -73,7 +76,7 @@ function SearchBar({ placeholder, optionCities, place }) {
           </div>
         </form>
 
-        {filteredData.length !== 0 && (
+        {filteredData.length > 0 && (
           <ul className={styles.dataResult}>{getData()}</ul>
         )}
       </div>

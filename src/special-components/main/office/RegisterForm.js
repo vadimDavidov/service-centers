@@ -1,11 +1,15 @@
+'use client';
 import styles from './RegisterForm.module.css';
 import Image from 'next/image';
 import RegisterDetails from './RegisterDetails';
+import { useState } from 'react';
 
 function RegisterForm() {
+  const [isShowCities, setIsShowCities] = useState(false);
+
   return (
-    <>
-      <div>
+    <div className={styles.form}>
+      <div onClick={() => isShowCities && setIsShowCities(false)}>
         <div className="container">
           <div className={styles.header}>
             <h1>Добавление сервисного центра, шаг 1 из 3</h1>
@@ -33,11 +37,12 @@ function RegisterForm() {
         </div>
       </div>
       <RegisterDetails
+        onShowCities={() => !isShowCities && setIsShowCities(true)}
         addressText="Пример: ул. Мира, д.22, строение 4"
         officeText="Пример: оф. 303"
         finderText="Пример: вход со двора, 3 этаж"
       />
-    </>
+    </div>
   );
 }
 

@@ -2,19 +2,31 @@
 import styles from './TopBar.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useContext, createContext } from 'react';
 import ModalCities from '@/global-components/ModalCities';
 import Overlay from '@/special-components/main/Overlay';
 import TopbarDropdown from './TopbarDropdown';
+import { CitiesDataContext } from '@/app/layout';
 
-function TopBar({ mainCities }) {
-  const cities = mainCities.map(city => city.map(item => item.props.children));
-  const paths = mainCities.map(link => link.map(path => path.props.href));
+export let CurrentCityContext;
+export let CurrentCoordsContext;
+
+function TopBar() {
+  const citiesData = useContext(CitiesDataContext);
   const [isOpen, setIsOpen] = useState(false);
-  const [pickedCity, setPickedCity] = useState('Выбор города');
+  const [pickedCity, setPickedCity] = useState('Москва');
   const [isDropdown, setIsDropdown] = useState(false);
 
-  // * Accept and set data from child component - ModalCities
+  CurrentCityContext = createContext(pickedCity);
+
+  const currentCityElement = citiesData.filter(
+    city => city.name === pickedCity
+  );
+  const currentCoords = currentCityElement.map(element => element.coords);
+
+  CurrentCoordsContext = createContext(currentCoords);
+
+  // * Accept and set data from child component - 'ModalCities.js'
   const handleClick = eventValue => {
     setPickedCity(() => eventValue);
   };
@@ -35,20 +47,18 @@ function TopBar({ mainCities }) {
     <div className="container">
       <div className={styles.topbar}>
         <div className={styles.brand}>
-          <Link href="/">
+          <Link href="/" onClick={() => setPickedCity('Выбор города')}>
             <Image
               className={styles.logo}
               width={43}
               height={56}
               src="/icons/logo.svg"
               alt="logo-img"
-              onClick={() => setPickedCity('Выбор города')}
             />
-            <p onClick={() => setPickedCity('Выбор города')}>
-              Сервисные центры
-            </p>
+            <p>Сервисные центры</p>
           </Link>
-          <button onClick={toggleModal} type="button">
+
+          <button onClick={toggleModal} type="button" value={pickedCity}>
             <span>{pickedCity}</span>
           </button>
         </div>
@@ -68,9 +78,8 @@ function TopBar({ mainCities }) {
           <Overlay onCloseModal={closeModal} />
           <ModalCities
             onCloseModal={closeModal}
-            cities={cities}
+            citiesData={citiesData}
             handleClick={handleClick}
-            href={paths}
           />
         </>
       )}

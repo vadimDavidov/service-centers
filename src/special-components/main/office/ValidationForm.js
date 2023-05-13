@@ -11,13 +11,18 @@ function ValidationForm(props) {
       <div className={styles.form}>
         <div className={styles.inputGroup}>
           <span>
-            <Image width={24} height={24} src="/icons/at.svg" />
+            <Image width={24} height={24} src="/icons/at.svg" alt="icon" />
           </span>
           <input placeholder={props.textEmail} type="email" />
         </div>
         <div className={styles.inputGroup}>
           <span>
-            <Image width={24} height={24} src="/icons/password.svg" />
+            <Image
+              width={24}
+              height={24}
+              src="/icons/password.svg"
+              alt="icon"
+            />
           </span>
           <input placeholder={props.textPassword} type="password" />
         </div>

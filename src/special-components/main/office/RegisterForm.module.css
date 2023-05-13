@@ -1,11 +1,16 @@
+.form {
+  padding: 20px;
+}
+
 .header h1 {
   font-weight: 700;
   padding-top: 1.5rem;
   padding-bottom: 1rem;
   font-size: 2.5rem;
-  min-width: 1200px;
+  max-width: 1200px;
   line-height: 1.2;
   margin-bottom: 0.5rem;
+  white-space: nowrap;
 }
 
 .inputGroup h3 {
@@ -62,4 +67,25 @@
 
 .alertInfo img {
   margin-right: 4px;
+}
+
+@media (max-width: 900px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 740px) {
+  .header h1 {
+    font-size: 1.5rem;
+  }
+  .inputGroup h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 567px) {
+  .header h1 {
+    white-space: normal;
+  }
 }

@@ -2,45 +2,41 @@
 import styles from './ModalCities.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import { v4 as uuidv4 } from 'uuid';
-import { optionCities } from '@/data/modalData';
 import { useState } from 'react';
 
-function ModalCities(props) {
-  const [showList, setShowList] = useState(false);
+function ModalCities({ citiesData, handleClick, onCloseModal }) {
+  const [isShowList, setIsShowlist] = useState(false);
 
-  // * Passing event result from child to parent component - TopBar
+  // * Passing event result from child to parent component - 'TopBar.js'
   const handlePicking = event => {
-    props.handleClick(event);
+    handleClick(event.target.name);
   };
 
-  const toggleShowList = () => {
-    setShowList(prev => !prev);
-  };
-
-  const getData = index => {
-    return props.cities[index].map((city, i) => {
+  const handleCities = () => {
+    return citiesData.map(city => {
       return (
-        <li
-          onClick={() => {
-            props.onCloseModal();
-            handlePicking(city);
-          }}
-          key={uuidv4()}
-        >
-          <Link href={props.href[index][i]} key={uuidv4()}>
-            {city}
+        <li onClick={onCloseModal} key={city.id}>
+          <Link
+            name={city.name}
+            onClick={item => handlePicking(item)}
+            href={city.link}
+          >
+            {city.name}
           </Link>
         </li>
       );
     });
   };
 
+  const toggleShowList = () => {
+    setIsShowlist(prev => !prev);
+  };
+
   return (
     <div className={styles.modal}>
       <div className={styles.modalHeader}>
         <h4>Выберите свой город</h4>
-        <button onClick={props.onCloseModal} type="button">
+        <button onClick={onCloseModal} type="button">
           <Image
             width={25}
             height={25}
@@ -49,44 +45,42 @@ function ModalCities(props) {
           />
         </button>
       </div>
-
       <div className={styles.modalBody}>
         <div className={styles.bodyBlocks}>
-          <ul className={styles.leftBlock}>{getData(0)}</ul>
-          <ul className={styles.middleBlock}>{getData(1)}</ul>
-          <ul className={styles.rightBlock}>{getData(2)}</ul>
-        </div>
-        <hr />
-        <div className={styles.selector} onClick={toggleShowList}>
-          <span placeholder="Абакан">Абакан</span>
-          <span>
-            <Image
-              width={25}
-              height={25}
-              src={
-                !showList ? '/icons/expand-more.svg' : '/icons/expand-less.svg'
-              }
-              alt="expand-image"
-            />
-          </span>
+          <ul className={styles.leftBlock}>{handleCities().slice(0, 6)}</ul>
+          <ul className={styles.middleBlock}>{handleCities().slice(6, 12)}</ul>
+          <ul className={styles.rightBlock}>{handleCities().slice(12, 19)}</ul>
         </div>
       </div>
+      <hr />
 
-      {showList && (
-        <>
-          <ul className={styles.selectorOptions}>
-            <div>
-              <input
-                type={'search'}
-                placeholder="Поиск города"
-                autoFocus={true}
-              />
-            </div>
-            {optionCities.map(option => (
-              <li key={uuidv4()}>{option}</li>
-            ))}
-          </ul>
-        </>
+      <div className={styles.selector} onClick={toggleShowList}>
+        <span placeholder="Абакан">Абакан</span>
+        <span>
+          <Image
+            width={25}
+            height={25}
+            src={
+              !isShowList ? '/icons/expand-more.svg' : '/icons/expand-less.svg'
+            }
+            alt="expand-image"
+          />
+        </span>
+      </div>
+
+      {isShowList && (
+        <ul className={styles.selectorOptions}>
+          <div>
+            <input
+              type={'search'}
+              placeholder="Поиск города"
+              autoFocus={true}
+            />
+          </div>
+          {citiesData.map(city => (
+            <li key={city.id}>{handleCities()}</li>
+          ))}
+        </ul>
       )}
     </div>
   );

@@ -4,7 +4,6 @@
   flex-wrap: wrap;
   align-items: center;
   padding: 4px;
-  font-family: 'Montserrat', sans-serif;
   width: 100%;
   text-align: center;
 }
@@ -20,7 +19,6 @@
 
 .brand span {
   white-space: nowrap;
-
 }
 
 .brand a {
@@ -55,7 +53,6 @@
 .topbar span {
   border-bottom: 1px dotted #000;
   align-items: center;
-
 }
 
 .loginLink {
@@ -65,26 +62,22 @@
 }
 
 @media (max-width: 600px) {
-
-
   .brand {
     flex-direction: column;
   }
-}
-
-@media (max-width: 420px) {
   .topbar {
     min-width: none;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: center;
   }
+}
 
-  .logo {
-    width: 36px;
-    height: 43px
-  }
+.logo {
+  width: 36px;
+  height: 43px;
+}
 
-  .brand span {
-    font-size: 1rem;
-  }
+.brand span {
+  font-size: 1rem;
 }
