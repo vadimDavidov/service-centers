@@ -23,8 +23,8 @@ function RegisterForm() {
             <div className={styles.alertInfo}>
               <span>
                 <Image
-                  width={16}
-                  height={16}
+                  width={20}
+                  height={20}
                   src="/icons/info.svg"
                   alt="icon"
                 />

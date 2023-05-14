@@ -1,6 +1,6 @@
 import Message from '@/global-components/Message';
 
-function Page(props) {
+function Page() {
   return (
     <>
       <title> Сервисные Центры России</title>

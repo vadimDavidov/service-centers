@@ -12,13 +12,8 @@ const inter = Inter({ subsets: ['cyrillic', 'latin'] });
 export const CitiesDataContext = createContext(citiesData);
 
 function RootLayout({ children }) {
-  const yandexApi = process.env.YANDEX_COMMON_API;
-  const [{ name, link, coords }] = useState([{}]);
   return (
     <html lang="ru">
-      <Head>
-        <script src={yandexApi} />
-      </Head>
       <body className={inter.className} suppressHydrationWarning={true}>
         <CitiesDataContext.Provider value={citiesData}>
           <TopBar />

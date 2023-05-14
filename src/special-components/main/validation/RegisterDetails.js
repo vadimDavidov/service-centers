@@ -4,6 +4,7 @@ import YandexMap from './YandexMap';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { CitiesDataContext } from '@/app/layout';
 import { CurrentCityContext } from '@/global-components/TopBar';
+import Link from 'next/link';
 
 function RegisterDetails({ addressText, officeText, finderText }) {
   const citiesData = useContext(CitiesDataContext);
@@ -11,17 +12,17 @@ function RegisterDetails({ addressText, officeText, finderText }) {
   const [isShowCities, setIsShowCities] = useState(false);
   const [selectedCity, setSelectedCity] = useState(currentCityName);
 
-  const openShowList = () => {
-    setIsShowCities(true);
-  };
+  const openShowList = () => setIsShowCities(true);
 
   const citiesList = citiesData.map(cities => (
     <option key={cities.id}>{cities.name}</option>
   ));
 
-  const selectedCoords = citiesData
-    .filter(city => city.name === selectedCity)
-    .map(city => city.coords);
+  const setCity = citiesData.filter(city => city.name === selectedCity);
+
+  const setCityName = setCity.map(city => city.name).toString();
+
+  const setCityCoords = setCity.map(city => city.coords);
 
   return (
     <>
@@ -93,9 +94,13 @@ function RegisterDetails({ addressText, officeText, finderText }) {
                 readOnly
               />
             </div>
-            <button className={styles.formBtn} type="submit">
+            <Link
+              href={`/setups/validation/registration-one/registration-three`}
+              className={styles.formBtn}
+              type="submit"
+            >
               Продолжить »
-            </button>
+            </Link>
             <input
               className={`hidden ${styles.token}`}
               type="text"
@@ -104,7 +109,10 @@ function RegisterDetails({ addressText, officeText, finderText }) {
             />
           </div>
           <div className={styles.map}>
-            <YandexMap selectedCoords={selectedCoords} />
+            <YandexMap
+              setCityName={setCityName}
+              setCityCoords={setCityCoords}
+            />
           </div>
         </div>
       </div>

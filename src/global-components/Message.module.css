@@ -1,8 +1,16 @@
 .message {
   text-align: center;
-  padding: 80px 0;
+  padding: 20px 0;
 }
 
 .message h1 {
   margin-bottom: 20px;
+}
+
+.map {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+
+  padding: 0 20%;
 }

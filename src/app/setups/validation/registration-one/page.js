@@ -1,4 +1,4 @@
-import RegisterForm from '@/special-components/main/office/RegisterForm';
+import RegisterForm from '@/special-components/main/validation/RegisterForm';
 
 function page() {
   return (

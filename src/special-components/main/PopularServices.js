@@ -9,14 +9,15 @@ function PopularServices({ popularServicesData }) {
         <ul className={styles.services}>
           {
             // * Getting data
-            popularServicesData.map(item => {
-              return (
-                <li className={styles.card}>
-                  <div className={styles.cardTitle}>{item.title}</div>
-                  <div className={styles.cardList}>{item.itemsList}</div>
-                </li>
-              );
-            })
+            popularServicesData &&
+              popularServicesData.map(item => {
+                return (
+                  <li className={styles.card}>
+                    <div className={styles.cardTitle}>{item.title}</div>
+                    <div className={styles.cardList}>{item.itemsList}</div>
+                  </li>
+                );
+              })
           }
         </ul>
         <div>

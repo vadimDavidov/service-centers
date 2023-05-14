@@ -13,20 +13,21 @@ function Manufacturers({ manufacturersData }) {
         <ul className={styles.manufacturers}>
           {
             // * Getting data
-            manufacturersData.map(item => {
-              return (
-                <li>
-                  <Link href="#">
-                    <Image
-                      width={item.image.width}
-                      height={item.image.height}
-                      src={item.image.src}
-                      alt={item.image.alt}
-                    />
-                  </Link>
-                </li>
-              );
-            })
+            manufacturersData &&
+              manufacturersData.map(item => {
+                return (
+                  <li>
+                    <Link href="#">
+                      <Image
+                        width={item.image.width}
+                        height={item.image.height}
+                        src={item.image.src}
+                        alt={item.image.alt}
+                      />
+                    </Link>
+                  </li>
+                );
+              })
           }
           <div className={styles.manufacturersLink}>
             <LinkToPage href="#"> Все производители</LinkToPage>

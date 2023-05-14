@@ -27,21 +27,13 @@ function TopBar() {
   CurrentCoordsContext = createContext(currentCoords);
 
   // * Accept and set data from child component - 'ModalCities.js'
-  const handleClick = eventValue => {
-    setPickedCity(() => eventValue);
-  };
+  const handleClick = eventValue => setPickedCity(() => eventValue);
 
-  const toggleModal = () => {
-    setIsOpen(prev => !prev);
-  };
+  const toggleModal = () => setIsOpen(prev => !prev);
 
-  const closeModal = () => {
-    setIsOpen(false);
-  };
+  const closeModal = () => setIsOpen(false);
 
-  const toggleDropdown = () => {
-    setIsDropdown(prev => !prev);
-  };
+  const toggleDropdown = () => setIsDropdown(prev => !prev);
 
   return (
     <div className="container">
@@ -62,16 +54,21 @@ function TopBar() {
             <span>{pickedCity}</span>
           </button>
         </div>
-        <button href="#" className={styles.loginLink} type="button">
-          <Image
-            width={25}
-            height={25}
-            src="/icons/login.svg"
-            alt="arrow-img"
-            onClick={toggleDropdown}
-          />
-        </button>
-        {isDropdown && <TopbarDropdown onClose={toggleDropdown} />}
+        <div className={styles.dropdownContainer}>
+          <button className={styles.loginLink} type="button">
+            <Image
+              width={25}
+              height={25}
+              src="/icons/login.svg"
+              alt="arrow-img"
+              onClick={toggleDropdown}
+            />
+          </button>
+
+          <div className={styles.dropdown}>
+            {isDropdown && <TopbarDropdown onClose={toggleDropdown} />}
+          </div>
+        </div>
       </div>
       {isOpen && (
         <>

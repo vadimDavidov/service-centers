@@ -8,7 +8,7 @@ import { categoriesData } from '@/data/categoriesData';
 import { manufacturersData } from '@/data/manufacturersData';
 import { popularServicesData } from '@/data/popularServicesData';
 
-export default function Krasnodar() {
+export default function page() {
   return (
     <>
       <title>Сервисные центры Краснодара</title>

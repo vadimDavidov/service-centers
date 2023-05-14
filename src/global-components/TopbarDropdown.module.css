@@ -4,11 +4,11 @@
   flex-direction: column;
   background-color: #fff;
   transform: translate(0px, 40px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
   min-width: 160px;
-  right: 85px;
-  top: 16px;
+  right: 80px;
+  top: 33px;
   padding: 8px 0;
   border: 0;
 }
@@ -23,6 +23,5 @@
 }
 
 .dropdown a:hover {
-  background-color: #EAEDF0;
-
+  background-color: #eaedf0;
 }

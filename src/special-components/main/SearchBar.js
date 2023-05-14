@@ -32,6 +32,7 @@ function SearchBar({ placeholder }) {
   };
 
   const getData = () =>
+    filteredData &&
     filteredData.slice(0, 15).map(item => {
       return (
         <li className={styles.dataItem} key={item.id}>

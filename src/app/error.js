@@ -9,7 +9,9 @@ function Error({ error, reset }) {
 
   return (
     <div>
-      <ErrorMessage href="/" reset={() => reset()} />
+      <>
+        <ErrorMessage href="/" reset={() => reset()} />
+      </>
     </div>
   );
 }

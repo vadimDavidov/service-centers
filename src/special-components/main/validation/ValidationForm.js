@@ -2,7 +2,7 @@ import styles from './ValidationForm.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 
-function ValidationForm(props) {
+function ValidationForm({ textEmail, textPassword }) {
   return (
     <div className="container">
       <div className={styles.header}>
@@ -13,7 +13,7 @@ function ValidationForm(props) {
           <span>
             <Image width={24} height={24} src="/icons/at.svg" alt="icon" />
           </span>
-          <input placeholder={props.textEmail} type="email" />
+          <input placeholder={textEmail} type="email" />
         </div>
         <div className={styles.inputGroup}>
           <span>
@@ -24,14 +24,16 @@ function ValidationForm(props) {
               alt="icon"
             />
           </span>
-          <input placeholder={props.textPassword} type="password" />
+          <input placeholder={textPassword} type="password" />
         </div>
 
         <button>Войти</button>
         <div className={styles.subform}>
-          <Link href="#">Восстановление пароля</Link>
+          <Link href="/setups/validation/password-recovery">
+            Восстановление пароля
+          </Link>
           <span>.</span>
-          <Link href="/cities/krasnodar/office/register">Регистрация</Link>
+          <Link href={`/setups/validation/registration-one`}>Регистрация</Link>
         </div>
       </div>
     </div>
