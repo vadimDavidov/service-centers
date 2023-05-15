@@ -15,12 +15,7 @@ function PasswordRecovery() {
         <form className={styles.form} action="POST">
           <div className={styles.inputGroup}>
             <span>
-              <Image
-                width={20}
-                height={20}
-                alt="icon"
-                src="/icons/at.svg"
-              ></Image>
+              <Image width={20} height={20} alt="icon" src="/icons/at.svg" />
             </span>
             <input type="email" placeholder="Ваш email" />
           </div>

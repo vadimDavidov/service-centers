@@ -1,3 +1,7 @@
+.wrapper {
+  padding: 0 16px;
+}
+
 .header h1 {
   font-weight: 700;
   padding-bottom: 1rem;
@@ -21,8 +25,14 @@
   vertical-align: middle;
   margin-top: 20px;
   padding: 6px 12px;
-  max-width: 10%;
-  min-width: 10%;
+  max-width: 150px;
+  /* min-width: 10%; */
   white-space: nowrap;
   margin-bottom: 60px;
+}
+
+@media (max-width: 400px) {
+  .header h1 {
+    font-size: 2rem;
+  }
 }

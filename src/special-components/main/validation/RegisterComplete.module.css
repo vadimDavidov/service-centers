@@ -1,3 +1,9 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+}
+
 .header h1 {
   font-weight: 700;
   padding-bottom: 1rem;
@@ -83,7 +89,7 @@
   user-select: none;
   vertical-align: middle;
   font-size: 1.1rem;
-  max-width: 20%;
+  max-width: 300px;
   margin-bottom: 40px;
   white-space: nowrap;
 }

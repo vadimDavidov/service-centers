@@ -1,3 +1,7 @@
+.wrapper {
+  padding: 0 16px;
+}
+
 .header h1 {
   font-weight: 700;
   padding-bottom: 1rem;
@@ -85,4 +89,11 @@
   height: 19px;
   background-color: transparent;
   border: none;
+}
+
+@media (max-width: 420px) {
+  .subform {
+    flex-direction: column;
+    padding-left: 16px;
+  }
 }
