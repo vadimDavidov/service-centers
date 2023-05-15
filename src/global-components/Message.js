@@ -1,6 +1,6 @@
 'use client';
 import styles from './Message.module.css';
-import CommonMap from './CommonMap';
+// import CommonMap from './CommonMap';
 
 function Message() {
   return (
@@ -9,9 +9,9 @@ function Message() {
         <h1>Добро пожаловать в гид по сервисным центрам России!</h1>
         <h2>Выберите город, пожалуйта.</h2>
       </div>
-      <div className={styles.map}>
+      {/* <div className={styles.map}>
         <CommonMap />
-      </div>
+      </div> */}
     </>
   );
 }

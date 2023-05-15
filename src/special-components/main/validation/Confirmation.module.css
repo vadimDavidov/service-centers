@@ -1,0 +1,28 @@
+.header h1 {
+  font-weight: 700;
+  padding-bottom: 1rem;
+  padding-top: 1.5rem;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.continue a {
+  background-color: #346eb8;
+  border-color: #346eb8;
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  display: inline-block;
+  font-size: 1rem;
+  padding: 12px;
+  text-align: center;
+  user-select: none;
+  vertical-align: middle;
+  margin-top: 20px;
+  padding: 6px 12px;
+  max-width: 10%;
+  min-width: 10%;
+  white-space: nowrap;
+  margin-bottom: 60px;
+}

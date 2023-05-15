@@ -1,7 +1,7 @@
 .modal {
   transition: transform 0.3s ease-out;
-  max-width: 800px;
-  width: 800px;
+  max-width: 50%;
+  min-width: 50%;
   height: auto;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -10,9 +10,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   position: fixed;
   top: 10%;
-  left: 24%;
+  left: 22%;
   z-index: 1;
   padding: 8px;
 }
@@ -42,6 +43,7 @@
 
 .modalBody li {
   margin-bottom: 8px;
+  white-space: nowrap;
 }
 
 .modalBody hr {
@@ -161,4 +163,31 @@
 .selectorOptions a:hover {
   color: #fff;
   opacity: 1;
+}
+
+@media (max-width: 1300px) {
+  .modal {
+    min-width: 40%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .bodyBlocks {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 400px) {
+  .modal {
+    min-width: 60%;
+  }
+  .leftBlock {
+    padding-left: 10px;
+  }
+  .middleBlock {
+    padding-left: 10px;
+  }
+  .rightBlock {
+    padding-left: 10px;
+  }
 }

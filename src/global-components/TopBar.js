@@ -2,7 +2,7 @@
 import styles from './TopBar.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useContext, createContext } from 'react';
+import { useState, useContext, createContext, useEffect } from 'react';
 import ModalCities from '@/global-components/ModalCities';
 import Overlay from '@/special-components/main/Overlay';
 import TopbarDropdown from './TopbarDropdown';
@@ -16,6 +16,11 @@ function TopBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [pickedCity, setPickedCity] = useState('Москва');
   const [isDropdown, setIsDropdown] = useState(false);
+
+  useEffect(() => {
+    const body = document.querySelector('body');
+    body.style.overflowY = isOpen ? 'hidden' : 'auto';
+  }, [isOpen]);
 
   CurrentCityContext = createContext(pickedCity);
 

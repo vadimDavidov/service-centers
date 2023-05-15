@@ -1,6 +1,8 @@
 .message {
   text-align: center;
   padding: 20px 0;
+  height: auto;
+  margin-bottom: 100px;
 }
 
 .message h1 {

@@ -4,8 +4,7 @@ import { Inter } from 'next/font/google';
 import TopBar from '@/global-components/TopBar';
 import Footer from '@/global-components/Footer';
 import { citiesData } from '@/data/citiesData';
-import { createContext, useState } from 'react';
-import Head from 'next/head';
+import { createContext } from 'react';
 
 const inter = Inter({ subsets: ['cyrillic', 'latin'] });
 
