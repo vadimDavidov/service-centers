@@ -1,18 +1,12 @@
-'use client';
 import styles from './Message.module.css';
-// import CommonMap from './CommonMap';
+import Header from './Header';
 
 function Message() {
   return (
-    <>
-      <div className={styles.message}>
-        <h1>Добро пожаловать в гид по сервисным центрам России!</h1>
-        <h2>Выберите город, пожалуйта.</h2>
-      </div>
-      {/* <div className={styles.map}>
-        <CommonMap />
-      </div> */}
-    </>
+    <div className={styles.message}>
+      <Header>Добро пожаловать в гид по сервисным центрам России!</Header>
+      <h2>Выберите город, пожалуйта.</h2>
+    </div>
   );
 }
 

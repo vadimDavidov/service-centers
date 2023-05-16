@@ -17,7 +17,7 @@ function RootLayout({ children }) {
         <CitiesDataContext.Provider value={citiesData}>
           <TopBar />
         </CitiesDataContext.Provider>
-        {children}
+        <div className="container">{children}</div>
         <Footer />
       </body>
     </html>

@@ -77,25 +77,6 @@
   padding: 6px 2px;
 }
 
-.formBtn {
-  background-color: #346eb8;
-  border-color: #346eb8;
-  color: #fff;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-  display: inline-block;
-  font-size: 1rem;
-  padding: 12px;
-  text-align: center;
-  user-select: none;
-  vertical-align: middle;
-  margin-top: 20px;
-  padding: 12px;
-  max-width: 30%;
-  min-width: 30%;
-  white-space: nowrap;
-}
-
 .token {
   max-width: 30%;
   padding: 12px;
@@ -135,21 +116,14 @@
   }
 }
 
-@media (max-width: 400px) {
-  .map {
-    width: 300px;
-    height: 200px;
+@media (max-width: 500px) {
+  .addressGroup {
+    flex-direction: column;
   }
 }
 
-@media (max-width: 500px) {
-  .formBtn {
-    justify-self: center;
-    align-self: center;
-    min-width: 100%;
-  }
-
-  .addressGroup {
-    flex-direction: column;
+@media (max-width: 400px) {
+  .map {
+    display: none;
   }
 }

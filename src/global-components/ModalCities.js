@@ -33,61 +33,48 @@ function ModalCities({ citiesData, handleClick, onCloseModal }) {
   };
 
   return (
-    <div className="container">
-      <div className={`modal-open ${styles.modal}`}>
-        <div className={styles.modalHeader}>
-          <h4>Выберите свой город</h4>
-          <button onClick={onCloseModal} type="button">
-            <Image
-              width={25}
-              height={25}
-              src="/icons/close.svg"
-              alt="close-image"
-            />
-          </button>
-        </div>
-        <div className={styles.modalBody}>
-          <div className={styles.bodyBlocks}>
-            <ul className={styles.leftBlock}>{handleCities().slice(0, 6)}</ul>
-            <ul className={styles.middleBlock}>
-              {handleCities().slice(6, 12)}
-            </ul>
-            <ul className={styles.rightBlock}>
-              {handleCities().slice(12, 19)}
-            </ul>
-          </div>
-        </div>
-        <hr />
-        <div className={styles.selector} onClick={toggleShowList}>
-          <span placeholder="Абакан">Абакан</span>
-          <span>
-            <Image
-              width={25}
-              height={25}
-              src={
-                !isShowList
-                  ? '/icons/expand-more.svg'
-                  : '/icons/expand-less.svg'
-              }
-              alt="expand-image"
-            />
-          </span>
-        </div>
-        {isShowList && (
-          <ul className={styles.selectorOptions}>
-            <div>
-              <input
-                type={'search'}
-                placeholder="Поиск города"
-                autoFocus={true}
-              />
-            </div>
-            {citiesData.map(city => (
-              <li key={city.id}>{handleCities()}</li>
-            ))}
-          </ul>
-        )}
+    <div className={`modal-open ${styles.modal}`}>
+      <div className={styles.modalHeader}>
+        <h4>Выберите свой город</h4>
+        <button onClick={onCloseModal} type="button">
+          <Image
+            width={25}
+            height={25}
+            src="/icons/close.svg"
+            alt="close-image"
+          />
+        </button>
       </div>
+      <div className={styles.modalBody}>
+        <div className={styles.bodyBlocks}>
+          <ul className={styles.leftBlock}>{handleCities().slice(0, 6)}</ul>
+          <ul className={styles.middleBlock}>{handleCities().slice(6, 12)}</ul>
+          <ul className={styles.rightBlock}>{handleCities().slice(12, 19)}</ul>
+        </div>
+      </div>
+      <hr />
+      <div className={styles.selector} onClick={toggleShowList}>
+        <span placeholder="Абакан">Абакан</span>
+        <span>
+          <Image
+            width={25}
+            height={25}
+            src={
+              !isShowList ? '/icons/expand-more.svg' : '/icons/expand-less.svg'
+            }
+            alt="expand-image"
+          />
+        </span>
+      </div>
+
+      {isShowList && (
+        <ul className={styles.selectorOptions}>
+          <input type={'search'} placeholder="Поиск города" autoFocus={true} />
+          {citiesData.map(city => (
+            <li key={city.id}>{handleCities()}</li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

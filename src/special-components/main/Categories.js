@@ -5,7 +5,7 @@ import LinkToPage from './LinkToPage';
 
 function Categories({ categoriesData }) {
   return (
-    <div className="container">
+    <>
       <ul className={styles.categories}>
         {
           //* Getting data
@@ -37,7 +37,7 @@ function Categories({ categoriesData }) {
       <div className={styles.link}>
         <LinkToPage href="#">Смотреть все виды техники</LinkToPage>
       </div>
-    </div>
+    </>
   );
 }
 

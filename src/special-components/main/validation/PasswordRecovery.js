@@ -1,13 +1,12 @@
 import styles from './PasswordRecovery.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import Header from '@/global-components/Header';
 
 function PasswordRecovery() {
   return (
-    <div className="container">
-      <div className={styles.header}>
-        <h1>Восстановление пароля</h1>
-      </div>
+    <>
+      <Header>Восстановление пароля</Header>
       <div className={styles.wrapper}>
         <div className={styles.messageOne}>
           <p>Введите email, который вы указали при регистрации:</p>
@@ -19,7 +18,7 @@ function PasswordRecovery() {
             </span>
             <input type="email" placeholder="Ваш email" />
           </div>
-          <button type="sybmit">Продолжить</button>
+          <button type="submit">Продолжить</button>
         </form>
         <div className={styles.messageTwo}>
           <p>
@@ -30,12 +29,12 @@ function PasswordRecovery() {
         </div>
         <div className={styles.messageThree}>
           <p>
-            Или воспользуйтесь{' '}
+            Или воспользуйтесь
             <Link href="/setups/feedback">службой поддержки</Link> .
           </p>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

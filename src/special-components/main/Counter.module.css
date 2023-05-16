@@ -9,10 +9,12 @@
 
 .counter {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  /* justify-content: space-around;
+  align-items: center; */
   color: #fff;
   padding: 48px;
+  margin: 0 auto;
+  max-width: 1320px;
 }
 
 .left {
@@ -24,7 +26,6 @@
   max-width: 100%;
 }
 
-
 .amount {
   font-weight: 700;
   white-space: nowrap;
@@ -33,7 +34,7 @@
 .border {
   width: 2px;
   height: 150px;
-  background-color: #BBE3ED;
+  background-color: #bbe3ed;
 }
 
 .right {
@@ -43,7 +44,7 @@
   font-size: 1.4rem;
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .counter {
     flex-direction: column;
     justify-content: flex-start;
@@ -63,8 +64,7 @@
   }
 }
 
-
-@media (max-width:520px) {
+@media (max-width: 520px) {
   .left {
     font-size: 1.3rem;
   }

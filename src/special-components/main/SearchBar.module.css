@@ -4,15 +4,6 @@
   width: 100%;
 }
 
-.search h1 {
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 1.2;
-  margin-bottom: 8px;
-  padding-bottom: 16px;
-  padding-top: 24px;
-}
-
 .form {
   background-color: #fff;
   border-radius: 8px;
@@ -30,19 +21,6 @@
   color: #323232;
   font-size: 1.25rem;
   border: none;
-}
-
-.searchBtn {
-  margin-left: 0.25rem;
-  border: 1px solid transparent;
-  border-radius: 0.3rem;
-  font-size: 1.25rem;
-  padding: 12px 20px;
-  background-color: #346eb8;
-  border-color: #346eb8;
-  color: #fff;
-  box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.15),
-    0 1px 1px rgba(0, 0, 0, 0.075);
 }
 
 .inputGroup {
@@ -129,5 +107,6 @@
 
   .input-group input::placeholder {
     opacity: 0;
+    font-size: 1rem;
   }
 }

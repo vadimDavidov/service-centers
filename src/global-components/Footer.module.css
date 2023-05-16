@@ -8,6 +8,8 @@
   display: flex;
   justify-content: space-between;
   padding: 48px 16px;
+  max-width: 1320px;
+  margin: 0 auto;
 }
 
 .logoGroup {

@@ -5,6 +5,8 @@ import { useContext, useState } from 'react';
 import Link from 'next/link';
 import { CitiesDataContext } from '@/app/layout';
 import { CurrentCityContext } from '@/global-components/TopBar';
+import Header from '@/global-components/Header';
+import LinkButton from '@/global-components/LinkButton';
 
 function SearchBar({ placeholder }) {
   const citiesData = useContext(CitiesDataContext);
@@ -42,45 +44,43 @@ function SearchBar({ placeholder }) {
     });
 
   return (
-    <div className="container">
-      <div className={styles.search}>
-        <h1>Сервисные центры - {currentCity}</h1>
-        <form className={styles.form} action="post">
-          <div className={styles.inputGroup}>
-            <span className={styles.text}>
-              <Image
-                src={
-                  wordEntered.length > 0
-                    ? '/icons/close.svg'
-                    : '/icons/search.svg'
-                }
-                width={29}
-                height={29}
-                alt="image"
-                onClick={clearInput}
-              />
-            </span>
-            <input
-              type="text"
-              placeholder={placeholder}
-              autoFocus={true}
-              value={wordEntered}
-              onChange={handleFilter}
+    <div className={styles.search}>
+      <Header>Сервисные центры - {currentCity}</Header>
+      <form className={styles.form} action="post">
+        <div className={styles.inputGroup}>
+          <span className={styles.text}>
+            <Image
+              src={
+                wordEntered.length > 0
+                  ? '/icons/close.svg'
+                  : '/icons/search.svg'
+              }
+              width={29}
+              height={29}
+              alt="image"
+              onClick={clearInput}
             />
-            <Link href="#" className={styles.searchBtn} target={'_blank'}>
-              Найти
-            </Link>
-          </div>
+          </span>
+          <input
+            type="text"
+            placeholder={placeholder}
+            autoFocus={true}
+            value={wordEntered}
+            onChange={handleFilter}
+          />
+          <LinkButton width={40} href="#" target={'_blank'}>
+            Найти
+          </LinkButton>
+        </div>
 
-          <div className={`hidden ${styles.suggestions}`}>
-            <div className={styles['p-2']}>Введите хотя бы 3 символа</div>
-          </div>
-        </form>
+        <div className={`hidden ${styles.suggestions}`}>
+          <div className={styles['p-2']}>Введите хотя бы 3 символа</div>
+        </div>
+      </form>
 
-        {filteredData.length > 0 && (
-          <ul className={styles.dataResult}>{getData()}</ul>
-        )}
-      </div>
+      {filteredData.length > 0 && (
+        <ul className={styles.dataResult}>{getData()}</ul>
+      )}
     </div>
   );
 }

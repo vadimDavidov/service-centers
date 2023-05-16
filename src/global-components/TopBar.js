@@ -41,7 +41,7 @@ function TopBar() {
   const toggleDropdown = () => setIsDropdown(prev => !prev);
 
   return (
-    <div className="container">
+    <div className={styles.wrapper}>
       <div className={styles.topbar}>
         <div className={styles.brand}>
           <Link href="/" onClick={() => setPickedCity('Выбор города')}>
@@ -59,6 +59,7 @@ function TopBar() {
             <span>{pickedCity}</span>
           </button>
         </div>
+
         <div className={styles.dropdownContainer}>
           <button className={styles.loginLink} type="button">
             <Image
@@ -69,7 +70,6 @@ function TopBar() {
               onClick={toggleDropdown}
             />
           </button>
-
           <div className={styles.dropdown}>
             {isDropdown && <TopbarDropdown onClose={toggleDropdown} />}
           </div>
